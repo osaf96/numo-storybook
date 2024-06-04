@@ -210,8 +210,8 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-9df69a9af181032a0638981edb0851696fc37ca79fe73a90d23d0b7d9c5b7b85a541a17781bc7de575f93693f9412315828ad8afb87b57a6f02b3238ec3c9313",
-            "file": "src/stories/header.component.ts",
+            "id": "component-HeaderComponent-ac7177c11fa621144aaf00e87c519e930ecb97823f5c6ff8f7dbdce105ee967ee3131f2187825df846e52b5f64af42f531e8e97bdcab53011a01dd9aac133ec0",
+            "file": "src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -283,7 +283,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { ButtonComponent } from \"./elements/button/button.component\";\nimport type { User } from \"./user\";\n\n@Component({\n  selector: \"numo-header\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: [\"./header.css\"],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { ButtonComponent } from \"../../elements/button/button.component\";\nimport type { User } from \"../../user\";\n\n@Component({\n  selector: \"numo-header\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: [\"./header.css\"],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -296,8 +296,8 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-ae9627dab6a92bfee8b59ea545cab36714b85a9d7054fe310b39a689d0822c61f149c07e99e52d3b910df7d51954414e878949f2fcb386d44307ed0c8cfa2f4d",
-            "file": "src/stories/page.component.ts",
+            "id": "component-PageComponent-b7b445a3b7eac1fe6f8a5164e16a6c64b5de7b8f9e3bb2016dee4712a2c85ca4fcf8fc9f34357d5c5aae2308823b1880b91565796c7b98cebec319e6960b405f",
+            "file": "src/stories/layouts/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -376,7 +376,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { HeaderComponent } from \"./header.component\";\nimport type { User } from \"./user\";\n\n@Component({\n  selector: \"numo-page\",\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n    <numo-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></numo-header>\n    <section class=\"numo-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a\n          href=\"https://componentdriven.org\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page\n        states without needing to navigate to them in your app. Here are some\n        handy patterns for managing page data in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose\n          such data from the \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock\n          these services out using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a\n          href=\"https://storybook.js.org/tutorials/\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a\n          href=\"https://storybook.js.org/docs\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg\n          width=\"10\"\n          height=\"10\"\n          viewBox=\"0 0 12 12\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: [\"./page.css\"],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: \"Jane Doe\" };\n  }\n\n  doCreateAccount() {\n    this.user = { name: \"Jane Doe\" };\n  }\n}\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport type { User } from \"../../user\";\n\n@Component({\n  selector: \"numo-page\",\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n    <numo-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></numo-header>\n    <section class=\"numo-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a\n          href=\"https://componentdriven.org\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page\n        states without needing to navigate to them in your app. Here are some\n        handy patterns for managing page data in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose\n          such data from the \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock\n          these services out using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a\n          href=\"https://storybook.js.org/tutorials/\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a\n          href=\"https://storybook.js.org/docs\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg\n          width=\"10\"\n          height=\"10\"\n          viewBox=\"0 0 12 12\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: [\"./page.css\"],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: \"Jane Doe\" };\n  }\n\n  doCreateAccount() {\n    this.user = { name: \"Jane Doe\" };\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -448,6 +448,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/elements/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -457,16 +466,7 @@
                 "status": "very-good"
             },
             {
-                "filePath": "src/stories/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/page.component.ts",
+                "filePath": "src/stories/layouts/page/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PageComponent",
