@@ -5,15 +5,16 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   selector: "numo-button",
   standalone: true,
   imports: [CommonModule],
-  template: ` <button
-    type="button"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
-  >
-    {{ label }}
-  </button>`,
-  styleUrls: ["./button.css"],
+  template: `
+    <button
+      type="button"
+      (click)="onClick.emit($event)"
+      [ngClass]="classes"
+      [ngStyle]="{ 'background-color': backgroundColor }"
+    >
+      {{ label }}
+    </button>
+  `,
 })
 export class ButtonComponent {
   /**
@@ -49,10 +50,25 @@ export class ButtonComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary
-      ? "numo-button--primary"
-      : "numo-button--secondary";
+    const baseClasses = [
+      "font-sans",
+      "font-bold",
+      "rounded-full",
+      "cursor-pointer",
+      "inline-block",
+      "leading-none",
+    ];
 
-    return ["numo-button", `numo-button--${this.size}`, mode];
+    const mode = this.primary
+      ? "text-white bg-black border-transparent"
+      : "text-gray-800 bg-transparent border border-gray-300";
+
+    const sizeClasses = {
+      small: "text-xs px-4 py-2",
+      medium: "text-sm px-5 py-2.5",
+      large: "text-base px-6 py-3",
+    };
+
+    return [...baseClasses, mode, sizeClasses[this.size]];
   }
 }

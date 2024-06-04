@@ -56,7 +56,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/input.css"
             ],
             "scripts": []
           },
@@ -104,6 +105,10 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "angular-latest:build",
+            "styles": [
+              "src/styles.scss",
+              "src/input.css"
+            ],
             "compodoc": true,
             "compodocArgs": [
               "-e",
