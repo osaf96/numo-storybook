@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { HeaderComponent } from "./header.component";
-import type { User } from "./user";
+import { HeaderComponent } from "../../components/header/header.component";
+import type { User } from "../../user";
 
 @Component({
   selector: "numo-page",

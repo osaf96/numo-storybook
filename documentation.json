@@ -85,7 +85,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-efce84c694a628149a910e390b786c2f4fbc15f340cd31abbc6a93360963b16d20e4cc094451fcef84c3cf9957758674d7292d7ffdecd44ab2c691c3ca92a6be",
-            "file": "src/stories/button.component.ts",
+            "file": "src/stories/elements/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -210,7 +210,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-95473b507a087cca3a50c581d05e5820d9173d1ddfd984947f096d8adae5cbabc2f41a53500b5712a0e4944c8bddcda9301a5e59ee4e14db99c1f4bce81a229e",
+            "id": "component-HeaderComponent-9df69a9af181032a0638981edb0851696fc37ca79fe73a90d23d0b7d9c5b7b85a541a17781bc7de575f93693f9412315828ad8afb87b57a6f02b3238ec3c9313",
             "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -283,7 +283,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { ButtonComponent } from \"./button.component\";\nimport type { User } from \"./user\";\n\n@Component({\n  selector: \"numo-header\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: [\"./header.css\"],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { ButtonComponent } from \"./elements/button/button.component\";\nimport type { User } from \"./user\";\n\n@Component({\n  selector: \"numo-header\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: [\"./header.css\"],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -448,7 +448,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button.component.ts",
+                "filePath": "src/stories/elements/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
