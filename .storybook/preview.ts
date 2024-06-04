@@ -5,6 +5,13 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        method: "alphabetical",
+        // order: ['Introduction', 'Styleguide', 'Atoms', ['Readme', '*'], 'Molecules', ['Readme', '*'], 'Organisms', ['Readme', '*']],
+        //  locales: 'en-US',
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
