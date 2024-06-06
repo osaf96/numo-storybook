@@ -13,5 +13,9 @@ You can use this component by passing the following props:
 ## Example
 
 ```html
-<numo-button label="Click me" primary size="large"></numo-button>
+<numo-button
+  [primary]="true"
+  [label]="'Button'"
+  (onClick)="onClick($event)"
+></numo-button>
 ```

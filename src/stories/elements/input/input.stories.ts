@@ -52,3 +52,13 @@ export const Medium: Story = {
     name: "email",
   },
 };
+
+export const Week: Story = {
+  args: {
+    size: "medium",
+    label: "Select week",
+    placeholder: "",
+    type: "week",
+    name: "week",
+  },
+};
