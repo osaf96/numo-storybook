@@ -295,6 +295,105 @@
             "extends": []
         },
         {
+            "name": "InputComponent",
+            "id": "component-InputComponent-be603a3ce6aecd7e7cfeddb14fb2ea13ff5c207c535dad7865fd7913c871e765295b1d86362d17a1d16a388aa0c0be9c5865bbc7044c9ece80df02f80182cb26",
+            "file": "src/stories/elements/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "numo-input",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div>\n  <label\n    for=\"email\"\n    class=\"block text-sm font-medium leading-6 text-gray-900\"\n    >{{ label }}</label\n  >\n  <div class=\"mt-2\">\n    <input\n      type=\"{{ type }}\"\n      name=\"{{ name }}\"\n      id=\"email\"\n      [ngClass]=\"classes\"\n      placeholder=\"{{ placeholder }}\"\n    />\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "\"Email\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "\"email\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "\"you@example.com\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "\"medium\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "\"email\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 44,
+                    "type": "\"text\" | \"number\" | \"email\" | \"date\" | \"datetime-local\" | \"month\" | \"password\" | \"tel\" | \"time\" | \"url\" | \"week\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"numo-input\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div>\n      <label\n        for=\"email\"\n        class=\"block text-sm font-medium leading-6 text-gray-900\"\n        >{{ label }}</label\n      >\n      <div class=\"mt-2\">\n        <input\n          type=\"{{ type }}\"\n          name=\"{{ name }}\"\n          id=\"email\"\n          [ngClass]=\"classes\"\n          placeholder=\"{{ placeholder }}\"\n        />\n      </div>\n    </div>\n  `,\n})\nexport class InputComponent {\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n  @Input()\n  label = \"Email\";\n\n  @Input()\n  name = \"email\";\n\n  @Input()\n  placeholder = \"you@example.com\";\n\n  @Input()\n  type:\n    | \"text\"\n    | \"number\"\n    | \"email\"\n    | \"date\"\n    | \"datetime-local\"\n    | \"month\"\n    | \"password\"\n    | \"tel\"\n    | \"time\"\n    | \"url\"\n    | \"week\" = \"email\";\n\n  public get classes(): string[] {\n    const baseClasses = [\n      \"block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600\",\n    ];\n\n    const sizeClasses = {\n      small: \"text-xs px-4 py-2\",\n      medium: \"text-sm px-5 py-2.5\",\n      large: \"text-base px-6 py-3\",\n    };\n\n    return [...baseClasses, sizeClasses[this.size]];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 57
+                    }
+                }
+            }
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-b7b445a3b7eac1fe6f8a5164e16a6c64b5de7b8f9e3bb2016dee4712a2c85ca4fcf8fc9f34357d5c5aae2308823b1880b91565796c7b98cebec319e6960b405f",
             "file": "src/stories/layouts/page/page.component.ts",
@@ -425,7 +524,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 13,
+        "count": 14,
         "status": "low",
         "files": [
             {
@@ -464,6 +563,15 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/elements/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 16,
+                "coverageCount": "1/6",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/layouts/page/page.component.ts",

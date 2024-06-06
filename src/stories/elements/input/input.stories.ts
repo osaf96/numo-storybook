@@ -1,18 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/angular";
 import { fn } from "@storybook/test";
-import { ButtonComponent } from "./button.component";
+import { InputComponent } from "./input.component";
 import description from "./description.md"; // Import the markdown file
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<ButtonComponent> = {
-  title: "1. Elements/Button",
-  component: ButtonComponent,
+const meta: Meta<InputComponent> = {
+  title: "1. Elements/Input",
+  component: InputComponent,
   tags: ["autodocs"],
-  argTypes: {
-    backgroundColor: {
-      control: "color",
-    },
-  },
+  argTypes: {},
   parameters: {
     docs: {
       description: {
@@ -21,36 +17,38 @@ const meta: Meta<ButtonComponent> = {
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  // args: { onClick: fn() },
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: "Button",
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: "Button",
-  },
-};
+type Story = StoryObj<InputComponent>;
 
 export const Large: Story = {
   args: {
     size: "large",
-    label: "Button",
+    label: "Email",
+    placeholder: "you@example.com",
+    type: "email",
+    name: "email",
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
-    label: "Button",
+    label: "Email",
+    placeholder: "you@example.com",
+    type: "email",
+    name: "email",
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: "medium",
+    label: "Email",
+    placeholder: "you@example.com",
+    type: "email",
+    name: "email",
   },
 };
