@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "id": "interface-User-23c11020a2831beb3fa02ee911a75b64009c31bb46f73a01145c2560cb13b7f7e641105b678bd8fb01a5a199117001f3da4a78351d29d85d213ed7b82982091f",
             "file": "src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "sourceCode": "export interface User {\r\n  name: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "name",
@@ -34,7 +34,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-f6e0a4165d90cd59f3e708780d9a8341fa358b7687dd565495660007b0653a064c738c99f2fcf4933a6716ace42cccf066ae403b54d7fe0acdb9b2879c092f10",
+            "id": "component-AppComponent-760efe64c8ccd211ef7dba9e05564ed0acd572451151df346e6ebb79cde6c36449111d07ad925ce7dbc7f9c9ed6247857054f0db96faa5a70cb719cac6753797",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -43,8 +43,10 @@
             "providers": [],
             "selector": "app-root",
             "styleUrls": [],
-            "styles": [],
-            "template": "<h1>Welcome to {{title}}!</h1>\n\n<router-outlet />\n",
+            "styles": [
+                ".icon-bell {\n\tcolor: #f80;\n}\n.icon-bell:hover {\n\tcolor: #f00;\n}"
+            ],
+            "template": "<h1 class=\"text-3xl font-bold underline\">\n<iconify-icon icon=\"eva:people-outline\"></iconify-icon>\n  Hello world!\n  <iconify-icon class=\"icon-bell\" icon=\"vaadin:bell\"></iconify-icon>\n</h1>\n<router-outlet />\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -59,7 +61,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 24
                 }
             ],
             "methodsClass": [],
@@ -76,15 +78,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet],\r\n  template: `\r\n    <h1>Welcome to {{title}}!</h1>\r\n\r\n    <router-outlet />\r\n  `,\r\n  styles: [],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet],\r\n  template: `\r\n    <h1 class=\"text-3xl font-bold underline\"> \r\n    <iconify-icon icon=\"eva:people-outline\"></iconify-icon>\r\n      Hello world!\r\n      <iconify-icon class=\"icon-bell\" icon=\"vaadin:bell\"></iconify-icon>\r\n    </h1> \r\n    <router-outlet />\r\n  `,\r\n  styles: [`.icon-bell {\r\n\tcolor: #f80;\r\n}\r\n.icon-bell:hover {\r\n\tcolor: #f00;\r\n}`],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "",
+            "stylesData": ".icon-bell {\n\tcolor: #f80;\n}\n.icon-bell:hover {\n\tcolor: #f00;\n}\n",
             "extends": []
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-efce84c694a628149a910e390b786c2f4fbc15f340cd31abbc6a93360963b16d20e4cc094451fcef84c3cf9957758674d7292d7ffdecd44ab2c691c3ca92a6be",
+            "id": "component-ButtonComponent-3be8a73eeaa336466bee46309fcc7e882634e0e7e72050e699103e97d7a01092ee6ef397cc581811cc1137e486b57718cb64f5eefd81da25c5135b751d6117f9",
             "file": "src/stories/elements/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -116,15 +118,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 783,
-                            "end": 796,
+                            "pos": 823,
+                            "end": 837,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 334,
                             "tagName": {
-                                "pos": 784,
-                                "end": 792,
+                                "pos": 824,
+                                "end": 832,
                                 "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -191,7 +193,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"numo-button\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <button\n      type=\"button\"\n      (click)=\"onClick.emit($event)\"\n      [ngClass]=\"classes\"\n      [ngStyle]=\"{ 'background-color': backgroundColor }\"\n    >\n      {{ label }}\n    </button>\n  `,\n})\nexport class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = \"Button\";\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const baseClasses = [\n      \"font-sans\",\n      \"font-bold\",\n      \"rounded-full\",\n      \"cursor-pointer\",\n      \"inline-block\",\n      \"leading-none\",\n    ];\n\n    const mode = this.primary\n      ? \"text-white bg-black border-transparent\"\n      : \"text-gray-800 bg-transparent border border-gray-300\";\n\n    const sizeClasses = {\n      small: \"text-xs px-4 py-2\",\n      medium: \"text-sm px-5 py-2.5\",\n      large: \"text-base px-6 py-3\",\n    };\n\n    return [...baseClasses, mode, sizeClasses[this.size]];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"numo-button\",\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <button\r\n      type=\"button\"\r\n      (click)=\"onClick.emit($event)\"\r\n      [ngClass]=\"classes\"\r\n      [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n    >\r\n      {{ label }}\r\n    </button>\r\n  `,\r\n})\r\nexport class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: \"small\" | \"medium\" | \"large\" = \"medium\";\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = \"Button\";\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const baseClasses = [\r\n      \"font-sans\",\r\n      \"font-bold\",\r\n      \"rounded-full\",\r\n      \"cursor-pointer\",\r\n      \"inline-block\",\r\n      \"leading-none\",\r\n    ];\r\n\r\n    const mode = this.primary\r\n      ? \"text-white bg-black border-transparent\"\r\n      : \"text-gray-800 bg-transparent border border-gray-300\";\r\n\r\n    const sizeClasses = {\r\n      small: \"text-xs px-4 py-2\",\r\n      medium: \"text-sm px-5 py-2.5\",\r\n      large: \"text-base px-6 py-3\",\r\n    };\r\n\r\n    return [...baseClasses, mode, sizeClasses[this.size]];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -210,7 +212,53 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-ac7177c11fa621144aaf00e87c519e930ecb97823f5c6ff8f7dbdce105ee967ee3131f2187825df846e52b5f64af42f531e8e97bdcab53011a01dd9aac133ec0",
+            "id": "component-HeaderComponent-daf4acc98c4edfa72b143b849b53793ee78b7f0e26c473566f86772619a9ea0724929f0eee95ea22c283e35a5bc1d147d9e7c1a6260e8bff6abf9427d2aed52d",
+            "file": "src/app/shared/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "template": " <h1 class=\"text-3xl font-bold underline\">\n  {{headerArg.title}}\n</h1>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "headerArg",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [],\r\n  template: `\r\n     <h1 class=\"text-3xl font-bold underline\"> \r\n      {{headerArg.title}}\r\n    </h1>\r\n  `,\r\n  styles: ``\r\n})\r\nexport class HeaderComponent {\r\n  @Input() headerArg: any;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": []
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-289f4c2b45732102af6f714605e978d8161739fc48c1e4d17309fedcb210c6df3d3ac73f86dfda791cb75e6e408a1cefa92adba9a2bb95ad43339cc0019d8e83-1",
             "file": "src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -283,20 +331,23 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { ButtonComponent } from \"../../elements/button/button.component\";\nimport type { User } from \"../../user\";\n\n@Component({\n  selector: \"numo-header\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: [\"./header.css\"],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\r\nimport { CommonModule } from \"@angular/common\";\r\n\r\nimport { ButtonComponent } from \"../../elements/button/button.component\";\r\nimport type { User } from \"../../user\";\r\n\r\n@Component({\r\n  selector: \"numo-header\",\r\n  standalone: true,\r\n  imports: [CommonModule, ButtonComponent],\r\n  template: `<header>\r\n    <div class=\"numo-header\">\r\n      <div>\r\n        <svg\r\n          width=\"32\"\r\n          height=\"32\"\r\n          viewBox=\"0 0 32 32\"\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n        >\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <numo-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></numo-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <numo-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></numo-button>\r\n          <numo-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            [primary]=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></numo-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: [\"./header.css\"],\r\n})\r\nexport class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".numo-header {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.numo-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.numo-header h1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.numo-header button + button {\n  margin-left: 10px;\n}\n\n.numo-header .welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "data": ".numo-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.numo-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.numo-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
             "stylesData": "",
-            "extends": []
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "HeaderComponent-1"
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-be603a3ce6aecd7e7cfeddb14fb2ea13ff5c207c535dad7865fd7913c871e765295b1d86362d17a1d16a388aa0c0be9c5865bbc7044c9ece80df02f80182cb26",
+            "id": "component-InputComponent-3e5b4951e0975a0521b359ab3701944d4e974fe0ac5d5513deabd811e3e6ec99c7196cc6a1e868ee4f18d9d5219d22c93e6cabb41e81a2ad2b13696cd64ca435",
             "file": "src/stories/elements/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -376,7 +427,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"numo-input\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div>\n      <label\n        for=\"email\"\n        class=\"block text-sm font-medium leading-6 text-gray-900\"\n        >{{ label }}</label\n      >\n      <div class=\"mt-2\">\n        <input\n          type=\"{{ type }}\"\n          name=\"{{ name }}\"\n          id=\"email\"\n          [ngClass]=\"classes\"\n          placeholder=\"{{ placeholder }}\"\n        />\n      </div>\n    </div>\n  `,\n})\nexport class InputComponent {\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n  @Input()\n  label = \"Email\";\n\n  @Input()\n  name = \"email\";\n\n  @Input()\n  placeholder = \"you@example.com\";\n\n  @Input()\n  type:\n    | \"text\"\n    | \"number\"\n    | \"email\"\n    | \"date\"\n    | \"datetime-local\"\n    | \"month\"\n    | \"password\"\n    | \"tel\"\n    | \"time\"\n    | \"url\"\n    | \"week\" = \"email\";\n\n  public get classes(): string[] {\n    const baseClasses = [\n      \"block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600\",\n    ];\n\n    const sizeClasses = {\n      small: \"text-xs px-4 py-2\",\n      medium: \"text-sm px-5 py-2.5\",\n      large: \"text-base px-6 py-3\",\n    };\n\n    return [...baseClasses, sizeClasses[this.size]];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component, Input } from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"numo-input\",\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <div>\r\n      <label\r\n        for=\"email\"\r\n        class=\"block text-sm font-medium leading-6 text-gray-900\"\r\n        >{{ label }}</label\r\n      >\r\n      <div class=\"mt-2\">\r\n        <input\r\n          type=\"{{ type }}\"\r\n          name=\"{{ name }}\"\r\n          id=\"email\"\r\n          [ngClass]=\"classes\"\r\n          placeholder=\"{{ placeholder }}\"\r\n        />\r\n      </div>\r\n    </div>\r\n  `,\r\n})\r\nexport class InputComponent {\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: \"small\" | \"medium\" | \"large\" = \"medium\";\r\n\r\n  @Input()\r\n  label = \"Email\";\r\n\r\n  @Input()\r\n  name = \"email\";\r\n\r\n  @Input()\r\n  placeholder = \"you@example.com\";\r\n\r\n  @Input()\r\n  type:\r\n    | \"text\"\r\n    | \"number\"\r\n    | \"email\"\r\n    | \"date\"\r\n    | \"datetime-local\"\r\n    | \"month\"\r\n    | \"password\"\r\n    | \"tel\"\r\n    | \"time\"\r\n    | \"url\"\r\n    | \"week\" = \"email\";\r\n\r\n  public get classes(): string[] {\r\n    const baseClasses = [\r\n      \"block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600\",\r\n    ];\r\n\r\n    const sizeClasses = {\r\n      small: \"text-xs px-4 py-2\",\r\n      medium: \"text-sm px-5 py-2.5\",\r\n      large: \"text-base px-6 py-3\",\r\n    };\r\n\r\n    return [...baseClasses, sizeClasses[this.size]];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -395,7 +446,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-b7b445a3b7eac1fe6f8a5164e16a6c64b5de7b8f9e3bb2016dee4712a2c85ca4fcf8fc9f34357d5c5aae2308823b1880b91565796c7b98cebec319e6960b405f",
+            "id": "component-PageComponent-86716c64a32156415836c5f2981b5396a5d4aff16dc2416d806822545236aeb2576c75e6fe2ad10e3aa613af48476f19dd409f6a3bc7bba32a31ee66de34babf",
             "file": "src/stories/layouts/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -475,11 +526,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport type { User } from \"../../user\";\n\n@Component({\n  selector: \"numo-page\",\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n    <numo-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></numo-header>\n    <section class=\"numo-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a\n          href=\"https://componentdriven.org\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page\n        states without needing to navigate to them in your app. Here are some\n        handy patterns for managing page data in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose\n          such data from the \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock\n          these services out using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a\n          href=\"https://storybook.js.org/tutorials/\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a\n          href=\"https://storybook.js.org/docs\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg\n          width=\"10\"\n          height=\"10\"\n          viewBox=\"0 0 12 12\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: [\"./page.css\"],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: \"Jane Doe\" };\n  }\n\n  doCreateAccount() {\n    this.user = { name: \"Jane Doe\" };\n  }\n}\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { CommonModule } from \"@angular/common\";\r\n\r\nimport { HeaderComponent } from \"../../components/header/header.component\";\r\nimport type { User } from \"../../user\";\r\n\r\n@Component({\r\n  selector: \"numo-page\",\r\n  standalone: true,\r\n  imports: [CommonModule, HeaderComponent],\r\n  template: `<article>\r\n    <numo-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"doLogout()\"\r\n      (onLogin)=\"doLogin()\"\r\n      (onCreateAccount)=\"doCreateAccount()\"\r\n    ></numo-header>\r\n    <section class=\"numo-page\">\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a\r\n          href=\"https://componentdriven.org\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page\r\n        states without needing to navigate to them in your app. Here are some\r\n        handy patterns for managing page data in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose\r\n          such data from the \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock\r\n          these services out using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a\r\n          href=\"https://storybook.js.org/tutorials/\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          Storybook tutorials\r\n        </a>\r\n        . Read more in the\r\n        <a\r\n          href=\"https://storybook.js.org/docs\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          docs\r\n        </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg\r\n          width=\"10\"\r\n          height=\"10\"\r\n          viewBox=\"0 0 12 12\"\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n        >\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: [\"./page.css\"],\r\n})\r\nexport class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: \"Jane Doe\" };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: \"Jane Doe\" };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".numo-page {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\n.numo-page h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.numo-page p {\n  margin: 1em 0;\n}\n\n.numo-page a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\n.numo-page ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\n.numo-page li {\n  margin-bottom: 8px;\n}\n\n.numo-page .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.numo-page .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.numo-page .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.numo-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": ".numo-page {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\n.numo-page h2 {\r\n  font-weight: 700;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-page p {\r\n  margin: 1em 0;\r\n}\r\n\r\n.numo-page a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\n.numo-page ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\n.numo-page li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.numo-page .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-page .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.numo-page .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\n.numo-page .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -524,7 +575,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 14,
+        "count": 12,
         "status": "low",
         "files": [
             {
@@ -544,6 +595,15 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

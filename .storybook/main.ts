@@ -1,5 +1,5 @@
-import type { StorybookConfig } from "@storybook/angular";
-
+import type { StorybookConfig } from "@storybook/angular"; 
+import path from 'path';
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -13,5 +13,6 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["../src/assets"], // Add this line
+
 };
 export default config;
