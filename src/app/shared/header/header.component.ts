@@ -1,16 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
-  template: `
-     <p class="text-3xl font-bold underline"> 
-      {{headerArg.title}} 
-    </p>
-  `,
-  styles: ``
+  imports: [FormsModule,CommonModule],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  @Input() headerArg: any;
+export class HeaderComponent { 
+  isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  closeDropdown() {
+    this.isDropdownOpen = false;
+  }
 }

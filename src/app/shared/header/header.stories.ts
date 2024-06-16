@@ -19,10 +19,6 @@ type Story = StoryObj<HeaderComponent>;
 
 export const Default: Story = {
     args: {
-        headerArg: {
-            id: '1',
-            title: 'Test Custom Header',
-            state: 'intial state',
-        },
+
     },
 };

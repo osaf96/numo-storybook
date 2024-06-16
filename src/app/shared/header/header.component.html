@@ -1,0 +1,23 @@
+<div class="header flex justify-between items-center p-2.5 bg-gray-100 text-white">
+  <div class="logo flex items-center font-bold text-2xl w-10 h-10">
+    <iconify-icon class="icon text-gray-800" icon="cil:hamburger-menu"></iconify-icon>
+    <img class="ml-4" src="assets/logo.png" alt="logo"/> 
+  </div>
+  <div class="search-bar flex justify-center mx-5 flex-1 relative"> 
+    <div class="searchbar-input flex justify-center w-full max-w-[500px] relative"> 
+      <iconify-icon class="icon text-gray-800 absolute top-[15px] left-[12px]" icon="il:search"></iconify-icon> 
+      <input  type="text"  class="w-full text-gray-800 p-2.5 rounded pl-10"/>
+    </div>
+  </div>
+  <div class="user-menu relative inline-block" (click)="toggleDropdown()" (mouseleave)="closeDropdown()">
+    <span class="user-name cursor-pointer text-gray-800 relative"><iconify-icon class="bell-icon text-gray-800 absolute top-1.5 left-[-20px]" icon="il:bell"></iconify-icon>Username</span>
+    @if(isDropdownOpen){
+
+      <div class="ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10" >
+        <a href="#profile" class="block px-4 py-3">Profile</a>
+        <a href="#settings" class="block px-4 py-3">Settings</a>
+        <a href="#logout" class="block px-4 py-3">Logout</a>
+      </div>
+    }
+  </div>
+</div>

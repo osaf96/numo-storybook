@@ -7,19 +7,12 @@ import { HeaderComponent } from './shared/header/header.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   template: `
-    <app-header [headerArg]="headerArg"></app-header>
-    <h1 class="text-3xl font-bold underline">  
-      Hello world! 
-    </h1> 
-    <iconify-icon class="icon-bell" icon="vaadin:bell"></iconify-icon>
+    <app-header></app-header> 
     <router-outlet />
 
   `,
-  styles: [`.icon-bell {
-	color: #f80;
-} `],
+  styles: [ ],
 })
 export class AppComponent {
-  title = 'angular-latest';
-  headerArg = { title: 'Custom Header' }
+  title = 'angular-latest'; 
 }

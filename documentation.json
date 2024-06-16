@@ -34,7 +34,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-760efe64c8ccd211ef7dba9e05564ed0acd572451151df346e6ebb79cde6c36449111d07ad925ce7dbc7f9c9ed6247857054f0db96faa5a70cb719cac6753797",
+            "id": "component-AppComponent-f7f2eb1a0002301652dece5682847add6194b1ad3d93a3f2415abebdf45a27035a69c62136fb4543846d9b72b04b4a05a371a85feb0d9a969b721bd251a28a1a",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -43,10 +43,8 @@
             "providers": [],
             "selector": "app-root",
             "styleUrls": [],
-            "styles": [
-                ".icon-bell {\n\tcolor: #f80;\n}\n.icon-bell:hover {\n\tcolor: #f00;\n}"
-            ],
-            "template": "<h1 class=\"text-3xl font-bold underline\">\n<iconify-icon icon=\"eva:people-outline\"></iconify-icon>\n  Hello world!\n  <iconify-icon class=\"icon-bell\" icon=\"vaadin:bell\"></iconify-icon>\n</h1>\n<router-outlet />\n",
+            "styles": [],
+            "template": "<app-header></app-header>\n<router-outlet />\n\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -61,7 +59,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 17
                 }
             ],
             "methodsClass": [],
@@ -73,15 +71,19 @@
             "imports": [
                 {
                     "name": "RouterOutlet"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet],\r\n  template: `\r\n    <h1 class=\"text-3xl font-bold underline\"> \r\n    <iconify-icon icon=\"eva:people-outline\"></iconify-icon>\r\n      Hello world!\r\n      <iconify-icon class=\"icon-bell\" icon=\"vaadin:bell\"></iconify-icon>\r\n    </h1> \r\n    <router-outlet />\r\n  `,\r\n  styles: [`.icon-bell {\r\n\tcolor: #f80;\r\n}\r\n.icon-bell:hover {\r\n\tcolor: #f00;\r\n}`],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { HeaderComponent } from './shared/header/header.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, HeaderComponent],\r\n  template: `\r\n    <app-header></app-header> \r\n    <router-outlet />\r\n\r\n  `,\r\n  styles: [ ],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest'; \r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": ".icon-bell {\n\tcolor: #f80;\n}\n.icon-bell:hover {\n\tcolor: #f00;\n}\n",
+            "stylesData": "",
             "extends": []
         },
         {
@@ -212,7 +214,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-daf4acc98c4edfa72b143b849b53793ee78b7f0e26c473566f86772619a9ea0724929f0eee95ea22c283e35a5bc1d147d9e7c1a6260e8bff6abf9427d2aed52d",
+            "id": "component-HeaderComponent-0fc908180d8f842e10ad4adf52e7e8d87a1ddf7f8d693cc44df45b9167a076b9d673b461339170eb800effc1ba4dbb3c507e3100d84dad6522547c22f0c2033c",
             "file": "src/app/shared/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -220,41 +222,80 @@
             "outputs": [],
             "providers": [],
             "selector": "app-header",
-            "styleUrls": [],
-            "styles": [
-                ""
+            "styleUrls": [
+                "./header.component.scss"
             ],
-            "template": " <h1 class=\"text-3xl font-bold underline\">\n  {{headerArg.title}}\n</h1>\n",
-            "templateUrl": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
                 {
-                    "name": "headerArg",
+                    "name": "isDropdownOpen",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
-                    "type": "any",
-                    "decorators": []
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
                 }
             ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "closeDropdown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleDropdown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [],\r\n  template: `\r\n     <h1 class=\"text-3xl font-bold underline\"> \r\n      {{headerArg.title}}\r\n    </h1>\r\n  `,\r\n  styles: ``\r\n})\r\nexport class HeaderComponent {\r\n  @Input() headerArg: any;\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [FormsModule,CommonModule],\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent { \r\n  isDropdownOpen = false;\r\n\r\n  toggleDropdown() {\r\n    this.isDropdownOpen = !this.isDropdownOpen;\r\n  }\r\n\r\n  closeDropdown() {\r\n    this.isDropdownOpen = false;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "\n",
-            "extends": []
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"header flex justify-between items-center p-2.5 bg-gray-100 text-white\">\r\n  <div class=\"logo flex items-center font-bold text-2xl w-10 h-10\">\r\n    <iconify-icon class=\"icon text-gray-800\" icon=\"cil:hamburger-menu\"></iconify-icon>\r\n    <img class=\"ml-4\" src=\"assets/logo.png\" alt=\"logo\"/> \r\n  </div>\r\n  <div class=\"search-bar flex justify-center mx-5 flex-1 relative\"> \r\n    <div class=\"searchbar-input flex justify-center w-full max-w-[500px] relative\"> \r\n      <iconify-icon class=\"icon text-gray-800 absolute top-[15px] left-[12px]\" icon=\"il:search\"></iconify-icon> \r\n      <input  type=\"text\"  class=\"w-full text-gray-800 p-2.5 rounded pl-10\"/>\r\n    </div>\r\n  </div>\r\n  <div class=\"user-menu relative inline-block\" (click)=\"toggleDropdown()\" (mouseleave)=\"closeDropdown()\">\r\n    <span class=\"user-name cursor-pointer text-gray-800 relative\"><iconify-icon class=\"bell-icon text-gray-800 absolute top-1.5 left-[-20px]\" icon=\"il:bell\"></iconify-icon>Username</span>\r\n    @if(isDropdownOpen){\r\n\r\n      <div class=\"ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10\" >\r\n        <a href=\"#profile\" class=\"block px-4 py-3\">Profile</a>\r\n        <a href=\"#settings\" class=\"block px-4 py-3\">Settings</a>\r\n        <a href=\"#logout\" class=\"block px-4 py-3\">Logout</a>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>"
         },
         {
             "name": "HeaderComponent",
@@ -603,7 +644,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
