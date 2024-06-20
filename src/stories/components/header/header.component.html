@@ -9,15 +9,15 @@
       <input  type="text"  class="w-full text-gray-800 p-2.5 rounded pl-10"/>
     </div>
   </div>
-  <div class="user-menu relative inline-block" (click)="toggleDropdown()" (mouseleave)="closeDropdown()">
-    <span class="user-name cursor-pointer text-gray-800 relative"><iconify-icon class="bell-icon text-gray-800 absolute top-1.5 left-[-20px]" icon="il:bell"></iconify-icon>Username</span>
-    @if(isDropdownOpen){ 
-      <div class="ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10" >
+  <div class="user-menu relative inline-block" >
+    <span class="user-name cursor-pointer text-gray-800 relative" (click)="toggleDropdown()"  ><iconify-icon class="bell-icon text-gray-800 absolute top-1.5 left-[-20px]" icon="il:bell"></iconify-icon>Username</span>
+    
+      <div class="ropdown absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10" [ngClass]="!isDropdownOpen ? 'hidden' : ''">
         <a href="#profile" class="block px-4 py-3">Profile</a>
         <a href="#settings" class="block px-4 py-3">Settings</a>
         <a href="#logout" class="block px-4 py-3">Logout</a>
       </div>
-    }
+ 
   </div>
 </div>
 @if(isMenuVisible){
