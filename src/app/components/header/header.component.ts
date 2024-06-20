@@ -8,7 +8,7 @@ import { MenuComponent } from '../menu/menu.component';
   standalone: true,
   imports: [FormsModule, CommonModule, MenuComponent],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styles: []
 })
 export class HeaderComponent {
   isDropdownOpen = false;

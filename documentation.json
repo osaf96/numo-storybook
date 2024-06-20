@@ -214,93 +214,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-289f4c2b45732102af6f714605e978d8161739fc48c1e4d17309fedcb210c6df3d3ac73f86dfda791cb75e6e408a1cefa92adba9a2bb95ad43339cc0019d8e83",
-            "file": "src/stories/components/header/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "numo-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 74,
-                    "type": "User | null",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 83,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 77,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 80,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                },
-                {
-                    "name": "ButtonComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\r\nimport { CommonModule } from \"@angular/common\";\r\n\r\nimport { ButtonComponent } from \"../../elements/button/button.component\";\r\nimport type { User } from \"../../user\";\r\n\r\n@Component({\r\n  selector: \"numo-header\",\r\n  standalone: true,\r\n  imports: [CommonModule, ButtonComponent],\r\n  template: `<header>\r\n    <div class=\"numo-header\">\r\n      <div>\r\n        <svg\r\n          width=\"32\"\r\n          height=\"32\"\r\n          viewBox=\"0 0 32 32\"\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n        >\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <numo-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></numo-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <numo-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></numo-button>\r\n          <numo-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            [primary]=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></numo-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: [\"./header.css\"],\r\n})\r\nexport class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".numo-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.numo-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.numo-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
-                    "styleUrl": "./header.css"
-                }
-            ],
-            "stylesData": "",
-            "extends": []
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-e15186af458d6e49a768270870ddff3617d975094369df25063a6329cb453fcb131c1739d6a2eac102feb25551c97b8786c2aeba774209500e76f4f7b01fe5ea-1",
+            "id": "component-HeaderComponent-0411092704abf08639a95aa988a037300deaff3c97d28f214b5bb1c5bcdd053bab377ff3bd0314459f8d1d6b2b88c307d76261c931ef3b0c374325ddf0da5f79",
             "file": "src/app/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -308,9 +222,7 @@
             "outputs": [],
             "providers": [],
             "selector": "app-header",
-            "styleUrls": [
-                "./header.component.scss"
-            ],
+            "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "./header.component.html"
@@ -405,20 +317,154 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { MenuComponent } from '../menu/menu.component';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [FormsModule, CommonModule, MenuComponent],\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent {\r\n  isDropdownOpen = false;\r\n  isMenuVisible = false;\r\n  toggleDropdown() {\r\n    this.isDropdownOpen = !this.isDropdownOpen;\r\n  }\r\n\r\n  closeDropdown() {\r\n    this.isDropdownOpen = false;\r\n  }\r\n  toggleMenu() {\r\n    this.isMenuVisible = !this.isMenuVisible;\r\n  }\r\n  closeMenu() {\r\n    this.isMenuVisible = false;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { MenuComponent } from '../menu/menu.component';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [FormsModule, CommonModule, MenuComponent],\r\n  templateUrl: './header.component.html',\r\n  styles: []\r\n})\r\nexport class HeaderComponent {\r\n  isDropdownOpen = false;\r\n  isMenuVisible = false;\r\n  toggleDropdown() {\r\n    this.isDropdownOpen = !this.isDropdownOpen;\r\n  }\r\n\r\n  closeDropdown() {\r\n    this.isDropdownOpen = false;\r\n  }\r\n  toggleMenu() {\r\n    this.isMenuVisible = !this.isMenuVisible;\r\n  }\r\n  closeMenu() {\r\n    this.isMenuVisible = false;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"header flex justify-between items-center p-2.5 bg-gray-100 text-white\">\r\n  <div class=\"logo flex items-center font-bold text-2xl w-10 h-10\">\r\n    <iconify-icon (click)=\"toggleMenu()\" class=\"icon text-gray-800\" icon=\"cil:hamburger-menu\"></iconify-icon>\r\n    <img class=\"ml-4\" src=\"assets/logo.png\" alt=\"logo\"/> \r\n  </div>\r\n  <div class=\"search-bar flex justify-center mx-5 flex-1 relative\"> \r\n    <div class=\"searchbar-input flex justify-center w-full max-w-[500px] relative\"> \r\n      <iconify-icon class=\"icon text-gray-800 absolute top-[15px] left-[12px]\" icon=\"il:search\"></iconify-icon> \r\n      <input  type=\"text\"  class=\"w-full text-gray-800 p-2.5 rounded pl-10\"/>\r\n    </div>\r\n  </div>\r\n  <div class=\"user-menu relative inline-block\" (click)=\"toggleDropdown()\" (mouseleave)=\"closeDropdown()\">\r\n    <span class=\"user-name cursor-pointer text-gray-800 relative\"><iconify-icon class=\"bell-icon text-gray-800 absolute top-1.5 left-[-20px]\" icon=\"il:bell\"></iconify-icon>Username</span>\r\n    @if(isDropdownOpen){ \r\n      <div class=\"ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10\" >\r\n        <a href=\"#profile\" class=\"block px-4 py-3\">Profile</a>\r\n        <a href=\"#settings\" class=\"block px-4 py-3\">Settings</a>\r\n        <a href=\"#logout\" class=\"block px-4 py-3\">Logout</a>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n@if(isMenuVisible){\r\n  <app-menu   (closeMenuOutput)=\"closeMenu()\"></app-menu>\r\n}"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-289f4c2b45732102af6f714605e978d8161739fc48c1e4d17309fedcb210c6df3d3ac73f86dfda791cb75e6e408a1cefa92adba9a2bb95ad43339cc0019d8e83-1",
+            "file": "src/stories/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "numo-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"numo-header\">\n      <div>\n        <svg\n          width=\"32\"\n          height=\"32\"\n          viewBox=\"0 0 32 32\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <numo-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></numo-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></numo-button>\n          <numo-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></numo-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 83,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 77,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 80,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\r\nimport { CommonModule } from \"@angular/common\";\r\n\r\nimport { ButtonComponent } from \"../../elements/button/button.component\";\r\nimport type { User } from \"../../user\";\r\n\r\n@Component({\r\n  selector: \"numo-header\",\r\n  standalone: true,\r\n  imports: [CommonModule, ButtonComponent],\r\n  template: `<header>\r\n    <div class=\"numo-header\">\r\n      <div>\r\n        <svg\r\n          width=\"32\"\r\n          height=\"32\"\r\n          viewBox=\"0 0 32 32\"\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n        >\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <numo-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></numo-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <numo-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></numo-button>\r\n          <numo-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            [primary]=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></numo-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: [\"./header.css\"],\r\n})\r\nexport class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
-                    "styleUrl": "./header.component.scss"
+                    "data": ".numo-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.numo-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.numo-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.numo-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
+                    "styleUrl": "./header.css"
                 }
             ],
             "stylesData": "",
             "extends": [],
             "isDuplicate": true,
             "duplicateId": 1,
-            "duplicateName": "HeaderComponent-1",
-            "templateData": "<div class=\"header flex justify-between items-center p-2.5 bg-gray-100 text-white\">\r\n  <div class=\"logo flex items-center font-bold text-2xl w-10 h-10\">\r\n    <iconify-icon (click)=\"toggleMenu()\" class=\"icon text-gray-800\" icon=\"cil:hamburger-menu\"></iconify-icon>\r\n    <img class=\"ml-4\" src=\"assets/logo.png\" alt=\"logo\"/> \r\n  </div>\r\n  <div class=\"search-bar flex justify-center mx-5 flex-1 relative\"> \r\n    <div class=\"searchbar-input flex justify-center w-full max-w-[500px] relative\"> \r\n      <iconify-icon class=\"icon text-gray-800 absolute top-[15px] left-[12px]\" icon=\"il:search\"></iconify-icon> \r\n      <input  type=\"text\"  class=\"w-full text-gray-800 p-2.5 rounded pl-10\"/>\r\n    </div>\r\n  </div>\r\n  <div class=\"user-menu relative inline-block\" (click)=\"toggleDropdown()\" (mouseleave)=\"closeDropdown()\">\r\n    <span class=\"user-name cursor-pointer text-gray-800 relative\"><iconify-icon class=\"bell-icon text-gray-800 absolute top-1.5 left-[-20px]\" icon=\"il:bell\"></iconify-icon>Username</span>\r\n    @if(isDropdownOpen){ \r\n      <div class=\"ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10\" >\r\n        <a href=\"#profile\" class=\"block px-4 py-3\">Profile</a>\r\n        <a href=\"#settings\" class=\"block px-4 py-3\">Settings</a>\r\n        <a href=\"#logout\" class=\"block px-4 py-3\">Logout</a>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n@if(isMenuVisible){\r\n  <app-menu   (closeMenuOutput)=\"closeMenu()\"></app-menu>\r\n}"
+            "duplicateName": "HeaderComponent-1"
+        },
+        {
+            "name": "IconComponent",
+            "id": "component-IconComponent-0ea30dfb2a30536d80b2c63c75bdb158a26f9df4dfaa812e0da1ea976b0af320c7f10db7af13033d2fa8d5feeb206927b6c4db0a1b8293f1fb8a328461cfc590",
+            "file": "src/app/elements/icon/icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<iconify-icon icon=\"{{ item.icon }}\" [ngClass]=\"class\"></iconify-icon>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "'text-gray-800'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core'; \r\n\r\n@Component({\r\n  selector: 'app-icon',\r\n  template: `<iconify-icon icon=\"{{ item.icon }}\" [ngClass]=\"class\"></iconify-icon>`,\r\n  standalone: true,\r\n  imports: [],\r\n})\r\nexport class IconComponent {\r\n  @Input() icon!: string;\r\n  @Input() class: string = 'text-gray-800';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "InputComponent",
@@ -521,7 +567,7 @@
         },
         {
             "name": "MenuComponent",
-            "id": "component-MenuComponent-273189561c33f08471a22e2578bfee5152a84c21da4a372cad24ca2f27534911c6e9c8005e46ad80ab48b1d7db60a7da2a96654da2e37891c5916ac163150fe5",
+            "id": "component-MenuComponent-5037992bcda0ac58556c76e3184070ea75300a66eb5a3bcc590695b7466a2d0eb8e0513536782944768a1b9a7d0a7df563082eee9cdb49f4108caa5079250c97",
             "file": "src/app/components/menu/menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -529,9 +575,7 @@
             "outputs": [],
             "providers": [],
             "selector": "app-menu",
-            "styleUrls": [
-                "./menu.component.scss"
-            ],
+            "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "./menu.component.html"
@@ -545,11 +589,22 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menuItems",
+                    "defaultValue": "SubMenu",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "closeMenu",
@@ -557,7 +612,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -574,7 +629,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -602,7 +657,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -616,6 +671,59 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "redirect",
+                    "args": [
+                        {
+                            "name": "route",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "route",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "resetState",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -631,22 +739,47 @@
                 {
                     "name": "CommonModule",
                     "type": "module"
+                },
+                {
+                    "name": "RouterModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, EventEmitter, Output } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-menu',\r\n  standalone: true,\r\n  imports: [FormsModule,CommonModule],\r\n  templateUrl: './menu.component.html',\r\n  styleUrls: ['./menu.component.scss']\r\n})\r\nexport class MenuComponent { \r\n  @Output() closeMenuOutput = new EventEmitter<void>();\r\n\r\n  onMenuClick(event: MouseEvent) {\r\n    event.stopPropagation();\r\n  }\r\n\r\n  onBackgroundClick(event: MouseEvent) {\r\n    this.closeMenuOutput.emit();\r\n  }\r\n\r\n  closeMenu() {\r\n    this.closeMenuOutput.emit();\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, EventEmitter, Output } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { Router, RouterModule } from '@angular/router';\r\nimport { SubMenu } from './menu.model';\r\n\r\n@Component({\r\n  selector: 'app-menu',\r\n  standalone: true,\r\n  imports: [FormsModule, CommonModule, RouterModule],\r\n  templateUrl: './menu.component.html',\r\n  styles: []\r\n})\r\nexport class MenuComponent {\r\n  @Output() closeMenuOutput = new EventEmitter<void>();\r\n\r\n  menuItems = SubMenu;\r\n  constructor(private router: Router) {\r\n\r\n  }\r\n  onMenuClick(event: MouseEvent) {\r\n    event.stopPropagation();\r\n  }\r\n\r\n  onBackgroundClick(event: MouseEvent) {\r\n    this.closeMenuOutput.emit();\r\n  }\r\n\r\n  closeMenu() {\r\n    this.closeMenuOutput.emit();\r\n  }\r\n  redirect(route: string, index: number) {\r\n    this.resetState();\r\n    this.menuItems[index].state = 'active';\r\n    this.router.navigate([route]);\r\n  }\r\n\r\n  resetState() {\r\n    this.menuItems.forEach((items) => {\r\n      items.state = 'inactive';\r\n    })\r\n  }\r\n}\r\n",
             "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".fixed {\r\n    position: fixed;\r\n    inset: 0;\r\n  }\r\n  .bg-opacity-50 {\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n  }\r\n  .flex {\r\n    display: flex;\r\n  }\r\n  .justify-end {\r\n    justify-content: flex-end;\r\n  }\r\n  .bg-white {\r\n    background-color: #ffffff;\r\n  }\r\n  .h-full {\r\n    height: 100%;\r\n  }\r\n  .overflow-y-auto {\r\n    overflow-y: auto;\r\n  }\r\n  .p-4 {\r\n    padding: 1rem;\r\n  }\r\n  .mb-4 {\r\n    margin-bottom: 1rem;\r\n  }\r\n  .bg-gray-200 {\r\n    background-color: #e2e8f0;\r\n  }\r\n  .rounded-lg {\r\n    border-radius: 0.5rem;\r\n  }\r\n  .p-2 {\r\n    padding: 0.5rem;\r\n  }\r\n  .mb-2 {\r\n    margin-bottom: 0.5rem;\r\n  }\r\n  .flex {\r\n    display: flex;\r\n  }\r\n  .items-center {\r\n    align-items: center;\r\n  }\r\n  .text-xl {\r\n    font-size: 1.25rem;\r\n  }\r\n  .font-bold {\r\n    font-weight: 700;\r\n  }\r\n  .text-lg {\r\n    font-size: 1.125rem;\r\n  }\r\n  .font-semibold {\r\n    font-weight: 600;\r\n  }\r\n  .pl-4 {\r\n    padding-left: 1rem;\r\n  }\r\n  .bg-blue-500 {\r\n    background-color: #3b82f6;\r\n  }\r\n  .text-white {\r\n    color: #ffffff;\r\n  }\r\n  .w-6 {\r\n    width: 1.5rem;\r\n  }\r\n  .h-6 {\r\n    height: 1.5rem;\r\n  }\r\n  .mr-2 {\r\n    margin-right: 0.5rem;\r\n  }\r\n  .absolute {\r\n    position: absolute;\r\n  }\r\n  .top-4 {\r\n    top: 1rem;\r\n  }\r\n  .right-4 {\r\n    right: 1rem;\r\n  }\r\n  \r\n  .icon-check{\r\n    font-size: 20px;\r\n    margin-right: 12px;\r\n  }",
-                    "styleUrl": "./menu.component.scss"
-                }
-            ],
+            "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "extends": [],
-            "templateData": "<div (click)=\"onBackgroundClick($event)\" class=\"fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-end\">\r\n  <div (click)=\"onMenuClick($event)\" class=\"relative w-1/3 bg-white h-full overflow-y-auto p-4\">\r\n    <button (click)=\"closeMenu()\" class=\"absolute top-4 right-4 focus:outline-none\">\r\n      <svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n      </svg>\r\n    </button>\r\n    <div class=\"mb-4 mt-8\">\r\n      <div class=\" rounded-lg p-2 mb-2 flex items-center \">\r\n        <iconify-icon class=\"icon-check\" icon=\"prime:check-circle\"></iconify-icon>\r\n        <span>UZDEVUMI</span>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <h2 class=\"text-xl font-bold mb-2 p-2 rounded-lg  text-white\" style=\"background-color:#019acb ;\">MANS NUMO</h2>\r\n      <h3 class=\"text-lg font-semibold mb-2\">VADIBA</h3>\r\n      <div class=\"mb-4\">\r\n        <div class=\"bg-blue-500 text-white rounded-lg p-2 mb-2 flex items-center\">\r\n          <span>DARBVIRSMA</span>\r\n        </div>\r\n        <div class=\"pl-4\">\r\n          <div class=\"bg-gray-200 rounded-lg p-2 mb-2 flex items-center\">\r\n            <span>PROMBŪTNES KALENDĀRS</span>\r\n          </div>\r\n          <div class=\"bg-gray-200 rounded-lg p-2 mb-2 flex items-center\">\r\n            <span>KOMANDĒJUMI</span>\r\n          </div>\r\n          <!-- Add more items similarly -->\r\n        </div>\r\n      </div>\r\n      <div>\r\n        <h3 class=\"text-lg font-semibold mb-2\">PRO NUMO</h3>\r\n        <div class=\"bg-gray-200 rounded-lg p-2 mb-2 flex items-center\">\r\n          <span>DARBIENIKI</span>\r\n        </div> \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+            "templateData": "<div class=\"w-56 relative\">\r\n  <div class=\"w-56 left-0 top-0\">\r\n    <div class=\"w-56 left-0 top-0 rounded-lg shadow border\">\r\n      <div class=\"w-full py-2 uppercase px-3 border border-b-[1px]\">\r\n        Mans Numo\r\n      </div>\r\n      <div class=\"w-full py-2 uppercase px-3 border border-b-[1px]\">Vadība</div>\r\n      <div class=\"w-full py-2 uppercase px-3 bg-gradient-to-b from-cyan-500 to-sky-600 text-white font-bold uppercase\">\r\n        Pro Numo\r\n      </div>\r\n\r\n      <!-- submenu starts -->\r\n      <!-- loop of pages ( loop have to defined in json in stories file or seperate file )\r\n       \r\n    {\r\n    \"pages\": [\r\n      {\r\n        \"name\": \"Banka\",\r\n        \"icon\": \"cil:bank\",\r\n        \"url\": \"/banka\",\r\n        \"state\": \"active\"\r\n      },\r\n      {\r\n        \"name\": \"Klienti\",\r\n        \"icon\": \"cil:people\",\r\n        \"url\": \"/klienti\",\r\n        \"state\": \"inactive\"\r\n      },\r\n      {\r\n        \"name\": \"Darījumi\",\r\n        \"icon\": \"cil:note-add\",\r\n        \"url\": \"/darījumi\",\r\n        \"state\": \"inactive\"\r\n      },\r\n      {\r\n        \"name\": \"Kredīti\",\r\n        \"icon\": \"cil:credit-card\",\r\n        \"url\": \"/kredīti\",\r\n        \"state\": \"inactive\"\r\n      },\r\n      {\r\n        \"name\": \"Statistika\",\r\n        \"icon\": \"cil:chart-line\",\r\n        \"url\": \"/statistika\",\r\n        \"state\": \"inactive\"\r\n      }\r\n    ]\r\n    }\r\n      \r\n      )\r\n    \r\n    \r\n  menu item also have to be as an element with stories\r\n\r\n  <menu-item></menu-item>\r\n    \r\n      -->\r\n      @for (item of menuItems; track item; let index = $index) {\r\n      <div class=\" py-2 pl-9 pr-3 uppercase cursor-pointer relative\" (click)=\"redirect(item.url, index)\" [ngClass]=\"item.state == 'active' ? 'text-cyan-500 w-full font-bold' : '' \">\r\n        <!-- menu needs active state . if active then text-cyan-500 -->\r\n        <iconify-icon class=\"absolute top-[50%] -translate-y-1/2 left-3\" icon=\"{{ item.icon }}\"></iconify-icon> \r\n        {{item.name}}\r\n      </div>\r\n      }\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
             "name": "PageComponent",
@@ -754,6 +887,16 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n}"
+            },
+            {
+                "name": "SubMenu",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/menu/menu.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n    {\r\n      \"name\": \"Banka\",\r\n      \"icon\": \"cil:bank\",\r\n      \"url\": \"/banka\",\r\n      \"state\": \"active\"\r\n    },\r\n    {\r\n      \"name\": \"Klienti\",\r\n      \"icon\": \"cil:people\",\r\n      \"url\": \"/klienti\",\r\n      \"state\": \"inactive\"\r\n    },\r\n    {\r\n      \"name\": \"Darījumi\",\r\n      \"icon\": \"cil:note-add\",\r\n      \"url\": \"/darījumi\",\r\n      \"state\": \"inactive\"\r\n    },\r\n    {\r\n      \"name\": \"Kredīti\",\r\n      \"icon\": \"cil:credit-card\",\r\n      \"url\": \"/kredīti\",\r\n      \"state\": \"inactive\"\r\n    },\r\n    {\r\n      \"name\": \"Statistika\",\r\n      \"icon\": \"cil:chart-line\",\r\n      \"url\": \"/statistika\",\r\n      \"state\": \"inactive\"\r\n    }\r\n  ]"
             }
         ],
         "functions": [],
@@ -771,6 +914,18 @@
                     "type": "ApplicationConfig",
                     "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n}"
                 }
+            ],
+            "src/app/components/menu/menu.model.ts": [
+                {
+                    "name": "SubMenu",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/menu/menu.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    {\r\n      \"name\": \"Banka\",\r\n      \"icon\": \"cil:bank\",\r\n      \"url\": \"/banka\",\r\n      \"state\": \"active\"\r\n    },\r\n    {\r\n      \"name\": \"Klienti\",\r\n      \"icon\": \"cil:people\",\r\n      \"url\": \"/klienti\",\r\n      \"state\": \"inactive\"\r\n    },\r\n    {\r\n      \"name\": \"Darījumi\",\r\n      \"icon\": \"cil:note-add\",\r\n      \"url\": \"/darījumi\",\r\n      \"state\": \"inactive\"\r\n    },\r\n    {\r\n      \"name\": \"Kredīti\",\r\n      \"icon\": \"cil:credit-card\",\r\n      \"url\": \"/kredīti\",\r\n      \"state\": \"inactive\"\r\n    },\r\n    {\r\n      \"name\": \"Statistika\",\r\n      \"icon\": \"cil:chart-line\",\r\n      \"url\": \"/statistika\",\r\n      \"state\": \"inactive\"\r\n    }\r\n  ]"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -779,7 +934,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 11,
+        "count": 9,
         "status": "low",
         "files": [
             {
@@ -816,7 +971,26 @@
                 "linktype": "component",
                 "name": "MenuComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/menu/menu.model.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SubMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

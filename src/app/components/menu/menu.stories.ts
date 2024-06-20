@@ -1,9 +1,22 @@
-import { Meta, StoryObj } from "@storybook/angular";
+import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 import { MenuComponent } from "./menu.component";
+import { SubMenu } from "./menu.model";
+import { CommonModule } from "@angular/common";
+import { RouterTestingModule } from "@angular/router/testing";
+import { FormsModule } from "@angular/forms";
 
 const meta: Meta<MenuComponent> = {
     title: '2.Components/Menu',
     component: MenuComponent,
+    decorators: [
+        moduleMetadata({
+            imports: [
+                CommonModule,
+                RouterTestingModule,
+                FormsModule
+            ]
+        })
+    ],
     excludeStories: /.*Data$/,
     tags: ['autodocs'],
     render: () => ({
@@ -16,8 +29,10 @@ const meta: Meta<MenuComponent> = {
 export default meta;
 type Story = StoryObj<MenuComponent>;
 
+
 export const Default: Story = {
     args: {
-
-    },
+        menuItems: SubMenu,
+    }
 };
+

@@ -2,15 +2,14 @@ import { Meta, StoryObj, argsToTemplate } from "@storybook/angular";
 import { HeaderComponent } from "./header.component";
 
 const meta: Meta<HeaderComponent> = {
-    title: '2.Components/CustomHeader',
+    title: '2.Components/Header',
     component: HeaderComponent,
     excludeStories: /.*Data$/,
     tags: ['autodocs'],
-    render: (headerArg: HeaderComponent) => ({
+    render: () => ({
         props: {
-            ...headerArg,
         },
-        template: `<app-header ${argsToTemplate(headerArg)}></app-header>`,
+        template: `<app-header ></app-header>`,
     }),
 };
 
