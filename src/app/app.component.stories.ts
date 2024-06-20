@@ -1,6 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from '../stories/components/header/header.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
 export default {

@@ -4,6 +4,7 @@ import { Menu } from "./menu.model";
 import { CommonModule } from "@angular/common";
 import { RouterTestingModule } from "@angular/router/testing";
 import { FormsModule } from "@angular/forms";
+import description from "./description.md";
 
 const meta: Meta<MenuComponent> = {
     title: '2.Components/Menu',
@@ -24,6 +25,13 @@ const meta: Meta<MenuComponent> = {
         },
         template: `<app-menu ></app-menu>`,
     }),
+    parameters: {
+        docs: {
+            description: {
+                component: description,
+            },
+        },
+    },
 };
 
 export default meta;

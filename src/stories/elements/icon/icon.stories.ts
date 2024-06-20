@@ -1,6 +1,6 @@
 import { argsToTemplate, Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { IconComponent } from './icon.component';
- 
+import description from "./description.md";
 
 export default {
   title: '1.Elements/Icons',
@@ -13,6 +13,13 @@ export default {
       },
       template: `<app-icon ${argsToTemplate(args)}></app-icon>`,
   }),
+  parameters: {
+    docs: {
+      description: {
+        component: description,
+      },
+    },
+  },
 } as Meta<IconComponent>;
 
 type Story = StoryObj<IconComponent>;

@@ -53,3 +53,4 @@ The menu items should be structured as follows:
     }
   ]
 } 
+```json

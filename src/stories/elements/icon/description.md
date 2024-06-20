@@ -10,3 +10,4 @@ To use the `IconComponent`, include it in your template and provide the necessar
 
 ```html
 <app-icon icon="cil:bank" class="text-gray-800 text-2xl"></app-icon>
+```html
