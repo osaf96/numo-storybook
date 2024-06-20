@@ -7,11 +7,13 @@ import { HeaderComponent } from '../stories/components/header/header.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   template: `
+  <div class="bg-gray-100 h-screen">
     <app-header></app-header> 
     <router-outlet /> 
-  `,
-  styles: [ ],
+  </div>   
+   `,
+  styles: [],
 })
 export class AppComponent {
-  title = 'angular-latest'; 
+  title = 'angular-latest';
 }

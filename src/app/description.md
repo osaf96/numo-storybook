@@ -18,6 +18,6 @@ The `AppComponent` serves as the root component of the Angular application. It d
 
 ### Template
 ```html
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header></app-header> 
+
 ```html
