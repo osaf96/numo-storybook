@@ -1,6 +1,6 @@
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 import { MenuComponent } from "./menu.component";
-import { SubMenu } from "./menu.model";
+import { Menu } from "./menu.model";
 import { CommonModule } from "@angular/common";
 import { RouterTestingModule } from "@angular/router/testing";
 import { FormsModule } from "@angular/forms";
@@ -32,7 +32,7 @@ type Story = StoryObj<MenuComponent>;
 
 export const Default: Story = {
     args: {
-        menuItems: SubMenu,
+        menuItems: Menu,
     }
 };
 

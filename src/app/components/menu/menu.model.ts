@@ -1,4 +1,4 @@
-export const SubMenu = [
+export const Menu = [
     {
         name: 'Mans Numo',
         state: 'inactive',

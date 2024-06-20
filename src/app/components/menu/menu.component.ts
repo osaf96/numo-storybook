@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { SubMenu } from './menu.model';
+import { Menu } from './menu.model';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +14,7 @@ import { SubMenu } from './menu.model';
 export class MenuComponent {
   @Output() closeMenuOutput = new EventEmitter<void>();
 
-  menuItems = [...SubMenu];
+  menuItems = [...Menu];
   constructor(private router: Router) {
 
   }
