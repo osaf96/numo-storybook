@@ -1,66 +1,20 @@
 <div class="w-56 relative">
   <div class="w-56 left-0 top-0">
     <div class="w-56 left-0 top-0 rounded-lg shadow border">
-      <div class="w-full py-2 uppercase px-3 border border-b-[1px]">
-        Mans Numo
-      </div>
-      <div class="w-full py-2 uppercase px-3 border border-b-[1px]">Vadība</div>
-      <div class="w-full py-2 uppercase px-3 bg-gradient-to-b from-cyan-500 to-sky-600 text-white font-bold uppercase">
-        Pro Numo
-      </div>
-
-      <!-- submenu starts -->
-      <!-- loop of pages ( loop have to defined in json in stories file or seperate file )
-       
-    {
-    "pages": [
-      {
-        "name": "Banka",
-        "icon": "cil:bank",
-        "url": "/banka",
-        "state": "active"
-      },
-      {
-        "name": "Klienti",
-        "icon": "cil:people",
-        "url": "/klienti",
-        "state": "inactive"
-      },
-      {
-        "name": "Darījumi",
-        "icon": "cil:note-add",
-        "url": "/darījumi",
-        "state": "inactive"
-      },
-      {
-        "name": "Kredīti",
-        "icon": "cil:credit-card",
-        "url": "/kredīti",
-        "state": "inactive"
-      },
-      {
-        "name": "Statistika",
-        "icon": "cil:chart-line",
-        "url": "/statistika",
-        "state": "inactive"
-      }
-    ]
-    }
-      
-      )
-    
-    
-  menu item also have to be as an element with stories
-
-  <menu-item></menu-item>
-    
-      -->
       @for (item of menuItems; track item; let index = $index) {
-      <div class=" py-2 pl-9 pr-3 uppercase cursor-pointer relative" (click)="redirect(item.url, index)" [ngClass]="item.state == 'active' ? 'text-cyan-500 w-full font-bold' : '' ">
-        <!-- menu needs active state . if active then text-cyan-500 -->
-        <iconify-icon class="absolute top-[50%] -translate-y-1/2 left-3" icon="{{ item.icon }}"></iconify-icon> 
+      <div class="w-full py-2 uppercase px-3 "
+        [ngClass]="item.state == 'active' ? 'bg-gradient-to-b from-cyan-500 to-sky-600 text-white font-bold': 'border border-b-[1px]'">
         {{item.name}}
       </div>
+
+      @for (submenuItem of item.submenu; track submenuItem; let subIndex = $index) {
+      <div class=" py-2 pl-9 pr-3 uppercase cursor-pointer relative"
+        (click)="redirect(submenuItem.url,item.submenu, subIndex)"
+        [ngClass]="submenuItem.state == 'active' ? 'text-cyan-500 w-full font-bold' : '' ">
+        <iconify-icon class="absolute top-[50%] -translate-y-1/2 left-3" icon="{{ submenuItem.icon }}"></iconify-icon>
+        {{submenuItem.name}}
+      </div>
+      }
       }
     </div>
   </div>

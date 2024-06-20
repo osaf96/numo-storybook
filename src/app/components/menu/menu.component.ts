@@ -14,7 +14,7 @@ import { SubMenu } from './menu.model';
 export class MenuComponent {
   @Output() closeMenuOutput = new EventEmitter<void>();
 
-  menuItems = SubMenu;
+  menuItems = [...SubMenu];
   constructor(private router: Router) {
 
   }
@@ -29,14 +29,14 @@ export class MenuComponent {
   closeMenu() {
     this.closeMenuOutput.emit();
   }
-  redirect(route: string, index: number) {
-    this.resetState();
-    this.menuItems[index].state = 'active';
+  redirect(route: string, submenu: any, index: number) {
+    this.resetSubmenuState(submenu);
+    submenu[index].state = 'active';
     this.router.navigate([route]);
   }
 
-  resetState() {
-    this.menuItems.forEach((items) => {
+  resetSubmenuState(submenu:any[]) {
+    submenu.forEach((items:any) => {
       items.state = 'inactive';
     })
   }

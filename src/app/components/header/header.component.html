@@ -1,6 +1,6 @@
 <div class="header flex justify-between items-center p-2.5 bg-gray-100 text-white">
-  <div class="logo flex items-center font-bold text-2xl w-10 h-10">
-    <iconify-icon (click)="toggleMenu()" class="icon text-gray-800" icon="cil:hamburger-menu"></iconify-icon>
+  <div class="logo flex items-center font-bold text-2xl w-10 h-10"> 
+      <iconify-icon (click)="toggleMenu()" class="icon text-gray-800 cursor-pointer" icon="{{ isMenuVisible ? 'ci:close-md':'cil:hamburger-menu'}}"></iconify-icon>  
     <img class="ml-4" src="assets/logo.png" alt="logo"/> 
   </div>
   <div class="search-bar flex justify-center mx-5 flex-1 relative"> 
