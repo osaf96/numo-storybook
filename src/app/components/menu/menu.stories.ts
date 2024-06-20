@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/angular";
 import { MenuComponent } from "./menu.component";
 
 const meta: Meta<MenuComponent> = {
-    title: 'Menu',
+    title: '2.Components/Menu',
     component: MenuComponent,
     excludeStories: /.*Data$/,
     tags: ['autodocs'],

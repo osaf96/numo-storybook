@@ -34,7 +34,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-f7f2eb1a0002301652dece5682847add6194b1ad3d93a3f2415abebdf45a27035a69c62136fb4543846d9b72b04b4a05a371a85feb0d9a969b721bd251a28a1a",
+            "id": "component-AppComponent-a05ad46c4cfe8ddce3efc07c92119632518be8a7ef49ccee0b6d11030e75ef9ea0837e32f35a03465cd5a9129e6cf7aa115b698a113c803975ff765918894203",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -80,7 +80,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { HeaderComponent } from './shared/header/header.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, HeaderComponent],\r\n  template: `\r\n    <app-header></app-header> \r\n    <router-outlet />\r\n\r\n  `,\r\n  styles: [ ],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest'; \r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { HeaderComponent } from './components/header/header.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, HeaderComponent],\r\n  template: `\r\n    <app-header></app-header> \r\n    <router-outlet />\r\n\r\n  `,\r\n  styles: [ ],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest'; \r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -214,92 +214,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-0fc908180d8f842e10ad4adf52e7e8d87a1ddf7f8d693cc44df45b9167a076b9d673b461339170eb800effc1ba4dbb3c507e3100d84dad6522547c22f0c2033c",
-            "file": "src/app/shared/header/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-header",
-            "styleUrls": [
-                "./header.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./header.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "isDropdownOpen",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "closeDropdown",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "toggleDropdown",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "FormsModule",
-                    "type": "module"
-                },
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [FormsModule,CommonModule],\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent { \r\n  isDropdownOpen = false;\r\n\r\n  toggleDropdown() {\r\n    this.isDropdownOpen = !this.isDropdownOpen;\r\n  }\r\n\r\n  closeDropdown() {\r\n    this.isDropdownOpen = false;\r\n  }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./header.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<div class=\"header flex justify-between items-center p-2.5 bg-gray-100 text-white\">\r\n  <div class=\"logo flex items-center font-bold text-2xl w-10 h-10\">\r\n    <iconify-icon class=\"icon text-gray-800\" icon=\"cil:hamburger-menu\"></iconify-icon>\r\n    <img class=\"ml-4\" src=\"assets/logo.png\" alt=\"logo\"/> \r\n  </div>\r\n  <div class=\"search-bar flex justify-center mx-5 flex-1 relative\"> \r\n    <div class=\"searchbar-input flex justify-center w-full max-w-[500px] relative\"> \r\n      <iconify-icon class=\"icon text-gray-800 absolute top-[15px] left-[12px]\" icon=\"il:search\"></iconify-icon> \r\n      <input  type=\"text\"  class=\"w-full text-gray-800 p-2.5 rounded pl-10\"/>\r\n    </div>\r\n  </div>\r\n  <div class=\"user-menu relative inline-block\" (click)=\"toggleDropdown()\" (mouseleave)=\"closeDropdown()\">\r\n    <span class=\"user-name cursor-pointer text-gray-800 relative\"><iconify-icon class=\"bell-icon text-gray-800 absolute top-1.5 left-[-20px]\" icon=\"il:bell\"></iconify-icon>Username</span>\r\n    @if(isDropdownOpen){\r\n\r\n      <div class=\"ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10\" >\r\n        <a href=\"#profile\" class=\"block px-4 py-3\">Profile</a>\r\n        <a href=\"#settings\" class=\"block px-4 py-3\">Settings</a>\r\n        <a href=\"#logout\" class=\"block px-4 py-3\">Logout</a>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-289f4c2b45732102af6f714605e978d8161739fc48c1e4d17309fedcb210c6df3d3ac73f86dfda791cb75e6e408a1cefa92adba9a2bb95ad43339cc0019d8e83-1",
+            "id": "component-HeaderComponent-289f4c2b45732102af6f714605e978d8161739fc48c1e4d17309fedcb210c6df3d3ac73f86dfda791cb75e6e408a1cefa92adba9a2bb95ad43339cc0019d8e83",
             "file": "src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -381,10 +296,129 @@
                 }
             ],
             "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-e15186af458d6e49a768270870ddff3617d975094369df25063a6329cb453fcb131c1739d6a2eac102feb25551c97b8786c2aeba774209500e76f4f7b01fe5ea-1",
+            "file": "src/app/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isDropdownOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "isMenuVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeDropdown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleDropdown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MenuComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { MenuComponent } from '../menu/menu.component';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [FormsModule, CommonModule, MenuComponent],\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent {\r\n  isDropdownOpen = false;\r\n  isMenuVisible = false;\r\n  toggleDropdown() {\r\n    this.isDropdownOpen = !this.isDropdownOpen;\r\n  }\r\n\r\n  closeDropdown() {\r\n    this.isDropdownOpen = false;\r\n  }\r\n  toggleMenu() {\r\n    this.isMenuVisible = !this.isMenuVisible;\r\n  }\r\n  closeMenu() {\r\n    this.isMenuVisible = false;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
             "extends": [],
             "isDuplicate": true,
             "duplicateId": 1,
-            "duplicateName": "HeaderComponent-1"
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<div class=\"header flex justify-between items-center p-2.5 bg-gray-100 text-white\">\r\n  <div class=\"logo flex items-center font-bold text-2xl w-10 h-10\">\r\n    <iconify-icon (click)=\"toggleMenu()\" class=\"icon text-gray-800\" icon=\"cil:hamburger-menu\"></iconify-icon>\r\n    <img class=\"ml-4\" src=\"assets/logo.png\" alt=\"logo\"/> \r\n  </div>\r\n  <div class=\"search-bar flex justify-center mx-5 flex-1 relative\"> \r\n    <div class=\"searchbar-input flex justify-center w-full max-w-[500px] relative\"> \r\n      <iconify-icon class=\"icon text-gray-800 absolute top-[15px] left-[12px]\" icon=\"il:search\"></iconify-icon> \r\n      <input  type=\"text\"  class=\"w-full text-gray-800 p-2.5 rounded pl-10\"/>\r\n    </div>\r\n  </div>\r\n  <div class=\"user-menu relative inline-block\" (click)=\"toggleDropdown()\" (mouseleave)=\"closeDropdown()\">\r\n    <span class=\"user-name cursor-pointer text-gray-800 relative\"><iconify-icon class=\"bell-icon text-gray-800 absolute top-1.5 left-[-20px]\" icon=\"il:bell\"></iconify-icon>Username</span>\r\n    @if(isDropdownOpen){ \r\n      <div class=\"ropdown hidden absolute right-0 bg-white text-black min-w-[160px] shadow-md z-10\" >\r\n        <a href=\"#profile\" class=\"block px-4 py-3\">Profile</a>\r\n        <a href=\"#settings\" class=\"block px-4 py-3\">Settings</a>\r\n        <a href=\"#logout\" class=\"block px-4 py-3\">Logout</a>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n@if(isMenuVisible){\r\n  <app-menu   (closeMenuOutput)=\"closeMenu()\"></app-menu>\r\n}"
         },
         {
             "name": "InputComponent",
@@ -484,6 +518,135 @@
                     }
                 }
             }
+        },
+        {
+            "name": "MenuComponent",
+            "id": "component-MenuComponent-273189561c33f08471a22e2578bfee5152a84c21da4a372cad24ca2f27534911c6e9c8005e46ad80ab48b1d7db60a7da2a96654da2e37891c5916ac163150fe5",
+            "file": "src/app/components/menu/menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-menu",
+            "styleUrls": [
+                "./menu.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./menu.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "closeMenuOutput",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "closeMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onBackgroundClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onMenuClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, EventEmitter, Output } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-menu',\r\n  standalone: true,\r\n  imports: [FormsModule,CommonModule],\r\n  templateUrl: './menu.component.html',\r\n  styleUrls: ['./menu.component.scss']\r\n})\r\nexport class MenuComponent { \r\n  @Output() closeMenuOutput = new EventEmitter<void>();\r\n\r\n  onMenuClick(event: MouseEvent) {\r\n    event.stopPropagation();\r\n  }\r\n\r\n  onBackgroundClick(event: MouseEvent) {\r\n    this.closeMenuOutput.emit();\r\n  }\r\n\r\n  closeMenu() {\r\n    this.closeMenuOutput.emit();\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".fixed {\r\n    position: fixed;\r\n    inset: 0;\r\n  }\r\n  .bg-opacity-50 {\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n  }\r\n  .flex {\r\n    display: flex;\r\n  }\r\n  .justify-end {\r\n    justify-content: flex-end;\r\n  }\r\n  .bg-white {\r\n    background-color: #ffffff;\r\n  }\r\n  .h-full {\r\n    height: 100%;\r\n  }\r\n  .overflow-y-auto {\r\n    overflow-y: auto;\r\n  }\r\n  .p-4 {\r\n    padding: 1rem;\r\n  }\r\n  .mb-4 {\r\n    margin-bottom: 1rem;\r\n  }\r\n  .bg-gray-200 {\r\n    background-color: #e2e8f0;\r\n  }\r\n  .rounded-lg {\r\n    border-radius: 0.5rem;\r\n  }\r\n  .p-2 {\r\n    padding: 0.5rem;\r\n  }\r\n  .mb-2 {\r\n    margin-bottom: 0.5rem;\r\n  }\r\n  .flex {\r\n    display: flex;\r\n  }\r\n  .items-center {\r\n    align-items: center;\r\n  }\r\n  .text-xl {\r\n    font-size: 1.25rem;\r\n  }\r\n  .font-bold {\r\n    font-weight: 700;\r\n  }\r\n  .text-lg {\r\n    font-size: 1.125rem;\r\n  }\r\n  .font-semibold {\r\n    font-weight: 600;\r\n  }\r\n  .pl-4 {\r\n    padding-left: 1rem;\r\n  }\r\n  .bg-blue-500 {\r\n    background-color: #3b82f6;\r\n  }\r\n  .text-white {\r\n    color: #ffffff;\r\n  }\r\n  .w-6 {\r\n    width: 1.5rem;\r\n  }\r\n  .h-6 {\r\n    height: 1.5rem;\r\n  }\r\n  .mr-2 {\r\n    margin-right: 0.5rem;\r\n  }\r\n  .absolute {\r\n    position: absolute;\r\n  }\r\n  .top-4 {\r\n    top: 1rem;\r\n  }\r\n  .right-4 {\r\n    right: 1rem;\r\n  }\r\n  \r\n  .icon-check{\r\n    font-size: 20px;\r\n    margin-right: 12px;\r\n  }",
+                    "styleUrl": "./menu.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div (click)=\"onBackgroundClick($event)\" class=\"fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-end\">\r\n  <div (click)=\"onMenuClick($event)\" class=\"relative w-1/3 bg-white h-full overflow-y-auto p-4\">\r\n    <button (click)=\"closeMenu()\" class=\"absolute top-4 right-4 focus:outline-none\">\r\n      <svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n      </svg>\r\n    </button>\r\n    <div class=\"mb-4 mt-8\">\r\n      <div class=\" rounded-lg p-2 mb-2 flex items-center \">\r\n        <iconify-icon class=\"icon-check\" icon=\"prime:check-circle\"></iconify-icon>\r\n        <span>UZDEVUMI</span>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <h2 class=\"text-xl font-bold mb-2 p-2 rounded-lg  text-white\" style=\"background-color:#019acb ;\">MANS NUMO</h2>\r\n      <h3 class=\"text-lg font-semibold mb-2\">VADIBA</h3>\r\n      <div class=\"mb-4\">\r\n        <div class=\"bg-blue-500 text-white rounded-lg p-2 mb-2 flex items-center\">\r\n          <span>DARBVIRSMA</span>\r\n        </div>\r\n        <div class=\"pl-4\">\r\n          <div class=\"bg-gray-200 rounded-lg p-2 mb-2 flex items-center\">\r\n            <span>PROMBŪTNES KALENDĀRS</span>\r\n          </div>\r\n          <div class=\"bg-gray-200 rounded-lg p-2 mb-2 flex items-center\">\r\n            <span>KOMANDĒJUMI</span>\r\n          </div>\r\n          <!-- Add more items similarly -->\r\n        </div>\r\n      </div>\r\n      <div>\r\n        <h3 class=\"text-lg font-semibold mb-2\">PRO NUMO</h3>\r\n        <div class=\"bg-gray-200 rounded-lg p-2 mb-2 flex items-center\">\r\n          <span>DARBIENIKI</span>\r\n        </div> \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
             "name": "PageComponent",
@@ -616,7 +779,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 12,
+        "count": 11,
         "status": "low",
         "files": [
             {
@@ -639,12 +802,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/header/header.component.ts",
+                "filePath": "src/app/components/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/menu/menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

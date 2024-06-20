@@ -2,7 +2,7 @@ import { Meta, StoryObj, argsToTemplate } from "@storybook/angular";
 import { HeaderComponent } from "./header.component";
 
 const meta: Meta<HeaderComponent> = {
-    title: 'CustomHeader',
+    title: '2.Components/CustomHeader',
     component: HeaderComponent,
     excludeStories: /.*Data$/,
     tags: ['autodocs'],
